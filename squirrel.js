@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 
- var output_array = getQueryStringArray()
+ var output_array = getQueryStringArray();
  if (document.location.search.length > 0)
  {
    var output = output_array["input"];
@@ -40,7 +40,7 @@ function getQueryStringArray()
 
 function setLanguage()
 {
-  if ($("#lang").options[$("#lang").selectedIndex].value = "sq") //Converting from English to Squirrel
+  if ($("#lang").options[$("#lang").selectedIndex].value === "sq") //Converting from English to Squirrel
   {
     toEnglish();
   }
@@ -67,7 +67,7 @@ function convertSquirrelToEnglish(input){
   var output = "";
   var addon;
    $.each(input.split(/\s+/), function(i, v){
-    if (v.length > 3){
+    if (v.length > 2){
       addon = v[v.length - 3] + v.substr(0, v.length - 3);
       output += addon;
       output += " ";
@@ -87,18 +87,30 @@ function isSquirrel()
 }
 
 function toEnglish() {
+  if ($("#idioma").val() === "sq")
+  {
+    $("#input_tag, #translate").each(function(){
+       $(this).html(convertSquirrelToEnglish($(this).html()))
+    });
+    $("#output").html(convertEnglishToSquirrel($("#output").html()));
+  }
+
   $(".native").css("font-family", "Arial");
   $(".foreign").css("font-family", "Wingdings");
   $("#idioma").val("eng");
-  $("#input_tag, #translate").html(convertSquirrelToEnglish(("#input_tag, #translate").html()));
-  $("#output").html(convertEnglishToSquirrel(("#output").html()));
 }
 
 function toSquirrel()
 {
+  if ($("#idioma").val() === "eng")
+  {
+    $("#input_tag, #translate").each(function(){
+      $(this).html(convertEnglishToSquirrel($(this).html()))
+    });
+    $("#output").html(convertSquirrelToEnglish($("#output").html()));
+  }
+
   $(".native").css("font-family", "Wingdings");
   $(".foreign").css("font-family", "Arial");
   $("#idioma").val("sq");
-  $("#input_tag, #translate").html(convertEnglishToSquirrel(("#input_tag, #translate").html()));
-  $("#output").html(convertSquirrelToEnglish(("#output").html()));
 }
