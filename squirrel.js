@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
  var output_array = getQueryStringArray()
  if (output_array.length > 0)
  {
+   console.log("It actually worked...");
    var output = output_array["input"];
    if (output_array["lang"] = "sq") //Converting from English to Squirrel
    {
@@ -20,11 +21,12 @@ function submit()
   var form = $("#lang");
   if (isSquirrel())
   {
-    form.value = "sq"; //Convert from English to Squirrel
+    form.val("sq"); //Convert from English to Squirrel
   }
   else {
-    form.value = "eng"; //Convert from Squirrel to English
+    form.val("eng"); //Convert from Squirrel to English
   }
+  console.log(form.val);
   $("#input_form").submit();
 }
 
@@ -41,6 +43,7 @@ function getQueryStringArray()
       queries[i[0].toString()] = newString; /* Assigns the element to its corresponding key in "queries" */
     });
   }
+  console.log(queries);
   return queries;
 }
 

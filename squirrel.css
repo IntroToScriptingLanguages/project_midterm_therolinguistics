@@ -79,6 +79,18 @@ form{
   width: 40%;
   height: 25%;
 }
+
+#debug{
+  float: right;
+  overflow-y: scroll;
+  margin: 10px;
+  border: dotted 2px black;
+  padding: 10px;
+  width: 40%;
+  height: 25%;
+  font-size: 12px;
+  font-family: "Arial";
+}
 /*Dynamic fonts*/
 .native{
   font-family: "Wingdings";
