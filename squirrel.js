@@ -1,9 +1,13 @@
 jQuery(document).ready(function($){
 
  var output = getQueryStringArray()["input"];
+ var phonetics = $("#phonetics");
+ phonetics.html(encodeURIComponent(output))
  $("#output").html(output);
 
 });
+
+var pronounce = [""]
 
 function getQueryStringArray()
 {
@@ -13,7 +17,7 @@ function getQueryStringArray()
     var newString = i[1].toString().replace("/+/g", "");
     newString = newString.replace("/(%0D%0A)/g", "");
     queries[i[0].toString()] = newString; /* Assigns the element to its corresponding key in "queries" */
-  })
+  });
   return queries;
 }
 
