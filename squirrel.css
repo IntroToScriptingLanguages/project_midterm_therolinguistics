@@ -81,11 +81,11 @@ form{
 }
 /*Dynamic fonts*/
 .native{
-  font-family: "Arial";
+  font-family: "Wingdings";
 }
 
 .foreign{
-  font-family: "Wingdings";
+  font-family: "Arial";
 }
 
 /*Static fonts*/

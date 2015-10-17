@@ -1,19 +1,29 @@
 jQuery(document).ready(function($){
 
- var output = getQueryStringArray()["input"];
+ var output_array = getQueryStringArray()
+ var output = output_array["input"];
+ if (output_array["lang"] = "sq") //Converting from English to Squirrel
+ {
+   toEnglish();
+ }
+ else { //Convert from Squirrel to English (default)
+   toSquirrel();
+ }
  $("#output").html(output);
 });
 
-textarea.addEventListener("change", function(){
-  var form = $("#input_form");
+function submit()
+{
+  var form = $("#lang");
   if ((isSquirrel())
   {
-    form.lang = "sq"; //Convert to Squirrel
+    form.value = "sq"; //Convert from English to Squirrel
   }
   else {
-    form.lang = "eng"; //Convert to English
+    form.value = "eng"; //Convert from Squirrel to English
   }
-});
+  $("#input_form").submit();
+}
 
 function getQueryStringArray()
 {
@@ -30,7 +40,7 @@ function getQueryStringArray()
 
 function isSquirrel()
 {
-  return $("foreign").css("font-family") === "Arial";
+  return $("foreign").css("font-family") === "Arial" || ;
 }
 
 function toEnglish() {
