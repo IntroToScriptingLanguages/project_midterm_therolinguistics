@@ -7,9 +7,11 @@ jQuery(document).ready(function($){
    if (output_array["lang"] === "eng") //Converting from English to Squirrel
    {
      toEnglish();
+     output = convertEnglishToSquirrel(output);
    }
    else { //Convert from Squirrel to English (default)
      toSquirrel();
+     output = convertSquirrelToEnglish(output);
    }
    $("#output").html(output);
  }
@@ -42,9 +44,36 @@ function setLanguage()
   {
     toEnglish();
   }
-  else { //Convert from Squirrel to English (default)
+  else {// Convert from Squirrel to English (default)
     toSquirrel();
   }
+}
+
+function convertEnglishToSquirrel(input){ //Squirrels speak "pig latin"
+  var output = "";
+  var addon, first_letter;
+  $.each(input.split(/\s+/), function(i, v){
+    if (v.length > 0){
+      addon = v.substr(1, v.length - 1);
+      addon += v[0] + "ay";
+      output += addon;
+    }
+    output += " ";
+  });
+  return output;
+}
+
+function convertSquirrelToEnglish(input){
+  var output = "";
+  var addon;
+   $.each(input.split(/\s+/), function(i, v){
+    if (v.length > 3){
+      addon = v[v.length - 3] + v.substr(0, v.length - 3);
+      output += addon;
+      output += " ";
+     }
+ });
+  return output;
 }
 
 function isEnglish()
