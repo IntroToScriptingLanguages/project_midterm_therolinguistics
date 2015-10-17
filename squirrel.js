@@ -90,6 +90,8 @@ function toEnglish() {
   $(".native").css("font-family", "Arial");
   $(".foreign").css("font-family", "Wingdings");
   $("#idioma").val("eng");
+  $("#input_tag, #translate").html(convertSquirrelToEnglish(("#input_tag, #translate").html()));
+  $("#output").html(convertEnglishToSquirrel(("#output").html()));
 }
 
 function toSquirrel()
@@ -97,4 +99,6 @@ function toSquirrel()
   $(".native").css("font-family", "Wingdings");
   $(".foreign").css("font-family", "Arial");
   $("#idioma").val("sq");
+  $("#input_tag, #translate").html(convertEnglishToSquirrel(("#input_tag, #translate").html()));
+  $("#output").html(convertSquirrelToEnglish(("#output").html()));
 }
