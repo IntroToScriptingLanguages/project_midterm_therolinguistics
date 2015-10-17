@@ -1,7 +1,14 @@
 /* Mobile */
 body{
-  width: 100%;
+  width: 300px;
   margin: 25px;
+  height: 200px;
+}
+
+form{
+  width: 300px;
+  margin: 25px;
+  height: 200px;
 }
 
 /* Tablet */
@@ -9,6 +16,11 @@ body{
 {
   body{
      width: 600px;
+     height: 400px;
+  }
+  form{
+     width: 600px;
+     height: 400px;
   }
 }
 
@@ -17,19 +29,45 @@ body{
 {
   body{
      width: 900px;
-     margin: 125px;
+     height: 600px;
+     margin: 75px;
+  }
+  form{
+      width: 900px;
+     height: 600px;
+     margin: 75px;
   }
 }
 
+
+
 #input_tag{
-  padding: 10px;
-  font-family: "Arial";
+    padding: 10px;
+    font-family: "Arial";
 }
 
 #input{
     float: left;
+    overflow-y: scroll;
     margin: 10px;
     border: solid 5px black;
     padding: 10px;
     font-family: "Arial";
+    width: 40%;
+    height: 35%;
+}
+
+#output{
+    float: right;
+    overflow-y: scroll;
+    margin: 10px;
+    border: solid 5px black;
+    padding: 10px;
+    width: 40%;
+    height: 35%;
+    font-family: "Arial";
+}
+
+.clear{
+  clear: both;
 }
