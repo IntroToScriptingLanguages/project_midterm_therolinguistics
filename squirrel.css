@@ -39,7 +39,11 @@ form{
   }
 }
 
-
+/* Squirrese font */
+@font-face {
+    font-family: "Squirrese";
+    src: url("squirrese.pt3");
+}
 
 #input_tag{
     padding: 10px;
@@ -65,7 +69,7 @@ form{
     padding: 10px;
     width: 40%;
     height: 35%;
-    font-family: "Arial";
+    font-family: "Squirrese";
 }
 
 .clear{
