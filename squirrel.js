@@ -1,6 +1,6 @@
-jquery(document).ready(function($){
+jQuery(document).ready(function($){
 
  var output = $("#translate").input;
  $("#output").html(input);
 
-})
+});

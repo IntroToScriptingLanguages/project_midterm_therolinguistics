@@ -62,7 +62,7 @@ form{
 }
 
 #output{
-    float: right;
+    float: left;
     overflow-y: scroll;
     margin: 10px;
     border: solid 5px black;
