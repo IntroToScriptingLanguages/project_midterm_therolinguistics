@@ -6,22 +6,27 @@
 </head>
 <body>
   <form id="input_form" action="squirrel.html">
-    <input type="hidden" id="lang" name="lang" value="" />
     <div id="input_tag" class="native">
       Input your text here!
     </div>
-    <textarea id="input" class="native" name="input">
+
+    <textarea id="input" class="native" name="input" value="">
     </textarea>
     <div id="output" class="foreign">
       Translation is here!
+    </div>
+    <div class="clear" >
     </div>
 
     <div class="clear" >
     </div>
 
+    <input type="hidden" id="idioma" name="lang" value="sq">
+    </input>
+
     <button type="button" id="translate" onClick="submit()" class="buttons native">Translate</button>
-    <button type="button" onclick="toEnglish()" class="buttons eng">English</button>
-    <button type="button" onclick="toSquirrel()" class="buttons sq">Squirrel</button>
+    <button type="button" id="toEng" onClick="toEnglish()" class="buttons eng">English</button>
+    <button type="button" id="toSq" onClick="toSquirrel()" class="buttons sq">Squirrel</button>
     <script src="jquery-1.11.3.min.js"></script>
     <script src="squirrel.js"></script>
   </form>
