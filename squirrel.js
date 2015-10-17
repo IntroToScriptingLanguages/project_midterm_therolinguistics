@@ -4,6 +4,17 @@ jQuery(document).ready(function($){
  $("#output").html(output);
 });
 
+textarea.addEventListener("change", function(){
+  var form = $("#input_form");
+  if ((isSquirrel())
+  {
+    form.lang = "sq"; //Convert to Squirrel
+  }
+  else {
+    form.lang = "eng"; //Convert to English
+  }
+});
+
 function getQueryStringArray()
 {
   var queries = {};
