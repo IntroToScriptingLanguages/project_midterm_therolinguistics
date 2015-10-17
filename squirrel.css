@@ -1,0 +1,35 @@
+/* Mobile */
+body{
+  width: 100%;
+  margin: 25px;
+}
+
+/* Tablet */
+@media (min-width: 768px)
+{
+  body{
+     width: 600px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px)
+{
+  body{
+     width: 900px;
+     margin: 125px;
+  }
+}
+
+#input_tag{
+  padding: 10px;
+  font-family: "Arial";
+}
+
+#input{
+    float: left;
+    margin: 10px;
+    border: solid 5px black;
+    padding: 10px;
+    font-family: "Arial";
+}
