@@ -26,7 +26,7 @@ function submit()
   else {
     form.val("eng"); //Convert from Squirrel to English
   }
-  console.log(form.val);
+  console.log(form.val());
   $("#input_form").submit();
 }
 
