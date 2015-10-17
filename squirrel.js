@@ -1,21 +1,24 @@
 jQuery(document).ready(function($){
 
  var output_array = getQueryStringArray()
- var output = output_array["input"];
- if (output_array["lang"] = "sq") //Converting from English to Squirrel
+ if (output_array.length > 0)
  {
-   toEnglish();
+   var output = output_array["input"];
+   if (output_array["lang"] = "sq") //Converting from English to Squirrel
+   {
+     toEnglish();
+   }
+   else { //Convert from Squirrel to English (default)
+     toSquirrel();
+   }
+   $("#output").html(output);
  }
- else { //Convert from Squirrel to English (default)
-   toSquirrel();
- }
- $("#output").html(output);
 });
 
 function submit()
 {
   var form = $("#lang");
-  if ((isSquirrel())
+  if (isSquirrel())
   {
     form.value = "sq"; //Convert from English to Squirrel
   }
@@ -29,18 +32,21 @@ function getQueryStringArray()
 {
   var queries = {};
   var newString;
-  $.each(document.location.search.substr(1).split('&'), function(index, value) { /* Gets query string of URL, splits it along each of the indices (&) and stores it into an array, then parses it!*/
-    var i = value.split('='); /* Takes the assignment of each variable and splits it between key and element, returning array i */
-    newString = i[1].toString().replace("+", " ");
-    newString = newString.replace("%0D%0A", "\n");
-    queries[i[0].toString()] = newString; /* Assigns the element to its corresponding key in "queries" */
-  });
+  if (document.location.search.length > 0)
+  {
+    $.each(document.location.search.substr(1).split('&'), function(index, value) { /* Gets query string of URL, splits it along each of the indices (&) and stores it into an array, then parses it!*/
+      var i = value.split('='); /* Takes the assignment of each variable and splits it between key and element, returning array i */
+      newString = i[1].toString().replace("+", " ");
+      newString = newString.replace("%0D%0A", "\n");
+      queries[i[0].toString()] = newString; /* Assigns the element to its corresponding key in "queries" */
+    });
+  }
   return queries;
 }
 
 function isSquirrel()
 {
-  return $("foreign").css("font-family") === "Arial" || ;
+  return $("foreign").css("font-family") === "Arial";
 }
 
 function toEnglish() {
